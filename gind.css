@@ -1,0 +1,42 @@
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .nav-link {
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FACC15;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .active-nav::after {
+    width: 100%;
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.5);
+  }

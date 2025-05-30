@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SablonKaosPro - Konveksi Kaos Sablon Berkualitas</title>
+  <base target="_self">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
+  <link rel="stylesheet" href="gind.css">
+</head>
+<body class="font-body bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-black/90 backdrop-blur-sm z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center">
+            <a href="#" class="flex w-20 h-20">
+                <img src="asset/icon2.png" alt="Logo Gindsreenprinting" class="w-full h-full object-contain">
+            </a>
+        </div>
+        
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="nav-link text-white hover:text-secondary px-3 py-2 text-sm font-medium">Beranda</a>
+          <a href="#about" class="nav-link text-white hover:text-secondary px-3 py-2 text-sm font-medium">Tentang Kami</a>
+          <a href="#products" class="nav-link text-white hover:text-secondary px-3 py-2 text-sm font-medium">Katalog</a>
+          <a href="#order" class="nav-link text-white hover:text-secondary px-3 py-2 text-sm font-medium">Pesan</a>
+          <a href="#contact" class="nav-link text-white hover:text-secondary px-3 py-2 text-sm font-medium">Kontak</a>
+        </div>
+        
+        <div class="flex items-center space-x-4">
+          <button id="theme-toggle" class="text-gray-300 hover:text-secondary focus:outline-none">
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block"></i>
+          </button>
+          
+          <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-secondary focus:outline-none">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-sm">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#home" class="block px-3 py-2 text-white hover:text-secondary font-medium">Beranda</a>
+        <a href="#about" class="block px-3 py-2 text-white hover:text-secondary font-medium">Tentang Kami</a>
+        <a href="#products" class="block px-3 py-2 text-white hover:text-secondary font-medium">Katalog</a>
+        <a href="#order" class="block px-3 py-2 text-white hover:text-secondary font-medium">Pesan</a>
+        <a href="#contact" class="block px-3 py-2 text-white hover:text-secondary font-medium">Kontak</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="parallax h-screen flex items-center justify-center relative" style="background-image: url('https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');">
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="container mx-auto px-6 text-center relative z-10" data-aos="fade-up" data-aos-duration="1000">
+      <h1 class="font-heading text-4xl md:text-6xl font-bold text-white mb-4">
+        <span class="text-secondary">Kualitas</span> <span class="text-neon">Premium</span> Untuk <span class="text-danger">Kaos</span> Anda
+      </h1>
+      <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+        Sablon kaos berkualitas dengan bahan terbaik dan desain kreatif untuk kebutuhan bisnis, komunitas, atau acara spesial Anda.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#products" class="bg-secondary hover:bg-yellow-400 text-black font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+          Lihat Katalog
+        </a>
+        <a href="#order" class="bg-transparent border-2 border-white hover:border-secondary text-white hover:text-secondary font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+          Pesan Sekarang
+        </a>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-10 left-0 right-0 flex justify-center">
+      <a href="#about" class="text-white animate-bounce">
+        <i class="fas fa-chevron-down text-2xl"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white dark:bg-gray-800">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+          Kenapa Memilih <span class="text-secondary">Kami?</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Kami memberikan pelayanan terbaik dengan kualitas yang tidak perlu diragukan lagi.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-secondary mb-4">
+            <i class="fas fa-tags text-4xl"></i>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-black dark:text-white mb-3">Harga Terjangkau</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Kami menawarkan harga kompetitif tanpa mengorbankan kualitas produk. Dapatkan kaos berkualitas dengan harga yang ramah di kantong.
+          </p>
+        </div>
+        
+        <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-accent mb-4">
+            <i class="fas fa-award text-4xl"></i>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-black dark:text-white mb-3">Sablon Awet</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Menggunakan teknik sablon modern yang tahan lama, tidak mudah luntur meski dicuci berkali-kali. Kualitas cetak yang tajam dan presisi.
+          </p>
+        </div>
+        
+        <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-danger mb-4">
+            <i class="fas fa-palette text-4xl"></i>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-black dark:text-white mb-3">Banyak Pilihan</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Berbagai model kaos, warna, dan teknik sablon tersedia. Kami juga menerima desain custom sesuai keinginan Anda.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+          Katalog <span class="text-secondary">Produk</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Pilihan kaos berkualitas dengan berbagai model dan desain sablon menarik.
+        </p>
+      </div>
+      
+      <div class="flex justify-center mb-8" data-aos="fade-up" data-aos-delay="100">
+        <div class="inline-flex rounded-md shadow-sm" role="group">
+          <button type="button" class="filter-btn px-4 py-2 text-sm font-medium rounded-l-lg bg-secondary text-black" data-filter="all">
+            Semua
+          </button>
+          <button type="button" class="filter-btn px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600" data-filter="crew">
+            Sablon Plastisol
+          </button>
+          <button type="button" class="filter-btn px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600" data-filter="hoodie">
+            Sablon DTF
+          </button>
+          <button type="button" class="filter-btn px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600" data-filter="Couple">
+            kaos Couple
+          </button>
+          <button type="button" class="filter-btn px-4 py-2 text-sm font-medium rounded-r-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600" data-filter="polo">
+            Lainya
+          </button>
+
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Product items will be generated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Section -->
+<section id="order" class="py-20 bg-white dark:bg-gray-800">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto" data-aos="fade-up">
+        <div class="text-center mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">
+            Form <span class="text-secondary">Pemesanan</span>
+          </h2>
+          <p class="text-gray-600 dark:text-gray-300">
+            Pilih metode pemesanan dan dapatkan diskon dengan kode redeem
+          </p>
+        </div>
+
+        <!-- Redeem Code Section -->
+        <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg mb-8" data-aos="fade-up">
+          <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0">
+              <h3 class="font-heading text-lg font-bold text-black dark:text-white">Kode Redeem Diskon</h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">Masukkan kode reedem untuk mendapatkan diskon spesial</p>
+            </div>
+            <form id="redeem-form" class="flex w-full md:w-auto">
+              <input type="text" id="redeem-code" placeholder="Masukkan kode" 
+                     class="px-4 py-2 rounded-l-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-secondary dark:bg-gray-600 dark:text-white w-full">
+              <button type="submit" class="bg-secondary hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded-r-lg transition duration-300">
+                Redeem
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="flex border-b border-gray-200 dark:border-gray-700 mb-8" data-aos="fade-up">
+          <button class="tab-btn py-4 px-6 font-medium text-center border-b-2 border-transparent hover:text-secondary text-black dark:text-white active-tab" 
+                  data-tab="order-form">
+            <i class="fas fa-edit mr-2"></i>Isi Form
+          </button>
+          <button class="tab-btn py-4 px-6 font-medium text-center border-b-2 border-transparent hover:text-secondary text-black dark:text-white" 
+                  data-tab="direct-order">
+            <i class="fas fa-store mr-2"></i>Datang Langsung
+          </button>
+          <button class="tab-btn py-4 px-6 font-medium text-center border-b-2 border-transparent hover:text-secondary text-black dark:text-white" 
+                  data-tab="wa-order">
+            <i class="fab fa-whatsapp mr-2"></i>Via WhatsApp
+          </button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-content active-tab-content" id="order-form">
+          <form id="order-form" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nama Lengkap*</label>
+                <input type="text" id="name" name="name" required 
+                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-secondary dark:bg-gray-700 dark:text-white">
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email*</label>
+                <input type="email" id="email" name="email" required 
+                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-secondary dark:bg-gray-700 dark:text-white">
+              </div>
+            </div>
+            
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nomor WhatsApp*</label>
+              <input type="tel" id="phone" name="phone" required 
+                     class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-secondary dark:bg-gray-700 dark:text-white">
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="product" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Jenis Kaos*</label>
+                <select id="product" name="product" required 
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-secondary dark:bg-gray-700 dark:text-white">
+                  <option value="" disabled selected>Pilih Jenis Kaos</option>
+                  <option value="crewneck">Sablon plastisol 24s</option>
+                  <option value="crewneck">Sablon plastisol 30s</option>
+                  <option value="hoodie">Sablon Dtf Depan Belakang </option>
+                  <option value="hoodie">Sablon Dtf Satu Titik </option>
+                  <option value="polo">Kaos Polo </option>
+                  <option value="polo">Kemeja </option>
+                  <option value="polo">Jersey </option>
+                  <option value="Couple">Sablon  Depan Belakang</option>
+                  <option value="Couple">Sablon  Satu Titik</option>
+                  <option value="Couple">Lainya Hubungi Admin</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="color" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Warna Kaos*</label>
+                <select id="color" name="color" required 
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-secondary dark:bg-gray-700 dark:text-white">
+                  <option value="" disabled selected>Pilih Warna</option>
+                  <option value="hitam">Hitam</option>
+                  <option value="putih">Putih</option>
+                  <option value="abu">Abu-abu</option>
+                  <option value="navy">Navy</option>
+                  <option value="merah">Merah</option>
+                  <option value="biru">Biru</option>
+                  <option value="hijau">Hijau</option>
+                  <option value="hijau">Lainya Hubungi Admin</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!--<div>
+                <label for="size" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Ukuran*</label>
+                <select id="size" name="size" required 
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-secondary dark:bg-gray-700 dark:text-white">
+                  <option value="" disabled selected>Pilih Ukuran</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                  <option value="XXL">Custom Hubungi Admin</option>
+                </select>
+              </div>-->
+              
+              <div>
+                <label for="quantity" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Jumlah Pesanan*</label>
+                <input type="number" id="quantity" name="quantity" min="1" required 
+                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-secondary dark:bg-gray-700 dark:text-white">
+              </div>
+            </div>
+            
+            <div>
+              <label for="design" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Catatan (Opsional)</label>
+              <textarea id="design" name="design" rows="3" 
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-secondary dark:bg-gray-700 dark:text-white" 
+                        placeholder="berikan catatan menegnai pesanan(ukuran per pcs,jumlah lengan panjang atau pendek,dll)"></textarea>
+            </div>
+            
+            <div>
+              <label for="file" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Upload Desain (Opsional)</label>
+              <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 dark:border-gray-600 border-dashed rounded-lg">
+                <div class="space-y-1 text-center">
+                  <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <div class="flex text-sm text-gray-600 dark:text-gray-300">
+                    <label for="file-upload" class="relative cursor-pointer bg-white dark:bg-gray-700 rounded-md font-medium text-secondary hover:text-yellow-500 focus-within:outline-none">
+                      <span>Upload file</span>
+                      <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                    </label>
+                    <p class="pl-1">atau drag and drop</p>
+                  </div>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    PNG, JPG, PDF maksimal 10MB
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <button type="submit" class="w-full bg-secondary hover:bg-yellow-400 text-black font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-[1.02]">
+                Kirim Pesanan
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Direct Order Tab -->
+        <div class="tab-content hidden" id="direct-order">
+          <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
+            <h3 class="font-heading text-xl font-bold text-black dark:text-white mb-4">Datang Langsung ke Toko Kami</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-medium text-black dark:text-white mb-2"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Alamat Lengkap</h4>
+                <p class="text-gray-600 dark:text-gray-300">
+                  RT.08/RW.04, Karangboyo, Payaman, Kec. Secang, Kabupaten Magelang, Jawa Tengah 56195
+                </p>
+              </div>
+              
+              <div>
+                <h4 class="font-medium text-black dark:text-white mb-2"><i class="fas fa-clock text-secondary mr-2"></i> Jam Operasional</h4>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Senin - Jumat: 08:00 - 17:00 WIB<br>
+                  Sabtu: 09:00 - 15:00 WIB<br>
+                  Minggu & Hari Libur: Tutup
+                </p>
+              </div>
+              
+              <div class="mt-6">
+                <a href="https://www.google.com/maps/place/GIND+Screen+Printing+Sablon+Konveksi+Magelang/@-7.4234959,110.2264295,645m/data=!3m1!1e3!4m16!1m9!3m8!1s0x2e7a858751a6716d:0x81b31ea800e64bfd!2sGIND+Screen+Printing+Sablon+Konveksi+Magelang!8m2!3d-7.4234959!4d110.2290044!9m1!1b1!16s%2Fg%2F11rcl0qncd!3m5!1s0x2e7a858751a6716d:0x81b31ea800e64bfd!8m2!3d-7.4234959!4d110.2290044!16s%2Fg%2F11rcl0qncd?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D" 
+                   target="_blank" 
+                   class="inline-flex items-center bg-accent hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                  <i class="fas fa-map-marked-alt mr-2"></i> Buka di Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WA Order Tab -->
+        <div class="tab-content hidden" id="wa-order">
+          <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
+            <h3 class="font-heading text-xl font-bold text-black dark:text-white mb-4">Pesan Via WhatsApp</h3>
+            <div class="space-y-4">
+              <div>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">
+                  Untuk pemesanan cepat via WhatsApp, silahkan hubungi nomor admin kami berikut:
+                </p>
+                
+                <div class="flex items-center bg-green-50 dark:bg-green-900/30 p-4 rounded-lg border border-green-200 dark:border-green-800">
+                  <div class="bg-green-100 dark:bg-green-800 p-3 rounded-full mr-4">
+                    <i class="fab fa-whatsapp text-green-600 dark:text-green-300 text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-black dark:text-white">Admin Gindsreenprinting</h4>
+                    <p class="text-gray-600 dark:text-gray-300">Fast response chat</p>
+                    <a href="https://wa.me/6283841427656?text=Hallo%20Admin,%20saya%20tertarik%20dengan%20layanan%pembuatan%20kaos.%20saya%20ingin%20konsultasi%20terlebih%20dahulu"
+                      class="inline-block mt-2 bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300"
+                      target="_blank">
+                      <i class="fab fa-whatsapp mr-2"></i> Hubungi via WhatsApp
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-4">
+                <p class="text-gray-600 dark:text-gray-300 text-sm">
+                  <i class="fas fa-info-circle text-secondary mr-1"></i> Siapkan detail pesanan Anda sebelum menghubungi admin (jenis kaos, ukuran, warna, jumlah, dll)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact & Footer -->
+  <footer id="contact" class="bg-black text-white pt-16 pb-8">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div data-aos="fade-up">
+          <h3 class="font-heading text-xl font-bold text-secondary mb-4">Gindsreenprinting</h3>
+          <p class="text-gray-300 mb-4">
+            Spesialis sablon kaos berkualitas dengan bahan premium dan desain kreatif untuk kebutuhan bisnis dan personal.
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://wa.me/6283841427656?text=Hallo%20Admin,%20saya%20tertarik%20dengan%20layanan%pembuatan%20kaos.%20saya%20ingin%20konsultasi%20terlebih%20dahulu" class="text-gray-300 hover:text-secondary transition duration-300">
+              <i class="fab fa-whatsapp text-xl"></i>
+            </a>
+            <a href="https://www.instagram.com/gindscreenprinting?igsh=eGN5MHl6MTFvaWVj" class="text-gray-300 hover:text-secondary transition duration-300">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="https://web.facebook.com/gind.screen.printing.2025/" class="text-gray-300 hover:text-secondary transition duration-300">
+              <i class="fab fa-facebook text-xl"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="100">
+          <h3 class="font-heading text-xl font-bold text-secondary mb-4">Kontak Kami</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-secondary mt-1 mr-3"></i>
+              <span class="text-gray-300">RT.08/RW.04, Karangboyo, Payaman, Kec. Secang, Kabupaten Magelang, Jawa Tengah 56195</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone-alt text-secondary mr-3"></i>
+              <span class="text-gray-300">+62 838-4142-7656</span>
+            </li>
+            <!--<li class="flex items-center">
+              <i class="fas fa-envelope text-secondary mr-3"></i>
+              <span class="text-gray-300">Ginscerrenprining.com</span>
+            </li>-->
+          </ul>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="200">
+          <h3 class="font-heading text-xl font-bold text-secondary mb-4">Jam Operasional</h3>
+          <ul class="space-y-2">
+            <li class="flex justify-between text-gray-300">
+              <span>Senin - Jumat</span>
+              <span>08:00 - 17:00</span>
+            </li>
+            <li class="flex justify-between text-gray-300">
+              <span>Sabtu</span>
+              <span>09:00 - 16:00</span>
+            </li>
+            <li class="flex justify-between text-gray-300">
+              <span>Minggu</span>
+              <span>Tutup</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            &copy; 2021 Manufactured by Gindsreenprinting.
+          </p>
+          <!--<div class="flex space-x-6">
+            <a href="#" class="text-gray-400 hover:text-secondary text-sm transition duration-300">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-secondary text-sm transition duration-300">Terms of Service</a>
+            <a href="#" class="text-gray-400 hover:text-secondary text-sm transition duration-300">FAQ</a>
+          </div>-->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-secondary text-black p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="gind.js"></script>
+    
+</body>
+</html>
