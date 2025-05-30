@@ -373,7 +373,6 @@ tailwind.config = {
     
     if (code === 'GINDXSINTESA2025') {
       discountApplied = true;
-      discountInfoElement.classList.remove('hidden');
       redeemCodeInput.classList.remove('border-red-500');
       redeemCodeInput.classList.add('border-green-500');
       
@@ -383,10 +382,9 @@ tailwind.config = {
       }
       
       // Show success message
-      showCustomAlert('Kode diskon berhasil diterapkan! Anda mendapatkan diskon.', true);
+      showCustomAlert('Kode diskon berhasil diterapkan! diskon telah terekam di server. silahkan memesan ', true);
     } else {
       discountApplied = false;
-      discountInfoElement.classList.add('hidden');
       redeemCodeInput.classList.add('border-red-500');
       showCustomAlert('Kode diskon tidak valid. Silakan coba lagi.', false);
     }
