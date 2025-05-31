@@ -1,73 +1,3 @@
-function showCustomAlert(message, isSuccess = true) {
-  // Hapus popup lama jika ada
-  const existing = document.querySelector('.popup-overlay');
-  if (existing) existing.remove();
-
-  const overlay = document.createElement('div');
-  overlay.className = 'popup-overlay';
-  overlay.style.cssText = `
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  `;
-
-  const box = document.createElement('div');
-  box.className = 'popup-box';
-  box.style.cssText = `
-    background: white;
-    padding: 24px;
-    border-radius: 12px;
-    text-align: center;
-    max-width: 90%;
-    width: 320px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    font-family: sans-serif;
-    animation: fadeIn 0.3s ease;
-  `;
-
-  const title = document.createElement('h2');
-  title.innerText = isSuccess ? 'Berhasil!' : 'Gagal!';
-  title.style.cssText = `
-    margin: 0 0 10px;
-    font-size: 20px;
-    color: ${isSuccess ? '#2c3e50' : '#e74c3c'};
-  `;
-
-  const text = document.createElement('p');
-  text.innerText = message;
-  text.style.cssText = `
-    margin: 0 0 16px;
-    font-size: 16px;
-    color: #444;
-  `;
-
-  const button = document.createElement('button');
-  button.innerText = 'Tutup';
-  button.onclick = () => document.body.removeChild(overlay);
-  button.style.cssText = `
-    background: ${isSuccess ? '#16a085' : '#e74c3c'};
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.2s ease;
-  `;
-  button.onmouseover = () => button.style.background = isSuccess ? '#12876f' : '#c0392b';
-  button.onmouseout = () => button.style.background = isSuccess ? '#16a085' : '#e74c3c';
-
-  box.appendChild(title);
-  box.appendChild(text);
-  box.appendChild(button);
-  overlay.appendChild(box);
-  document.body.appendChild(overlay);
-}
 
 tailwind.config = {
     darkMode: 'class',
@@ -96,89 +26,115 @@ tailwind.config = {
     });
     
     const products = [
-      {
-        id: 1,
-        name: "Kaos 24s ",
-        category: "crew",
-        price: 65000,
-        image: "https://images.unsplash.com/photo-1527719327859-c6ce80353573?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        colors: ["Hitam", "Putih", "Abu", "Navy"],
-        sizes: ["S", "M", "L", "XL"]
-      },
-      {
-        id: 2,
-        name: "Sablon Depan dan Belakang",
-        category: "hoodie",
-        price: 85000,
-        image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        colors: ["Hitam", "Abu", "Maroon", "Biru"],
-        sizes: ["M", "L", "XL", "XXL"]
-      },
-      {
-        id: 3,
-        name: "Sablon Depan dan Belakang",
-        category: "Couple",
-        price: 160000,
-        image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        colors: ["Putih", "Hitam", "Biru", "Hijau"],
-        sizes: ["S", "M", "L", "XL"]
-      },
-      {
-        id: 4,
-        name: "Kaos 30s ",
-        category: "crew",
-        price: 60000,
-        image: "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        colors: ["Putih", "Hitam", "Abu", "Merah"],
-        sizes: ["S", "M", "L", "XL"]
-      },
-      {
-        id: 5,
-        name: "Sablon Satu titik",
-        category: "Couple",
-        price: 65000,
-        image: "https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        colors: ["Hitam", "Abu", "Krem", "Biru"],
-        sizes: ["M", "L", "XL", "XXL"]
-      },
-      {
-        id: 6,
-        name: "Sablon Satu titik",
-        category: "hoodie",
-        price: 120000,
-        image: "https://images.unsplash.com/photo-1578932750355-5eb30ece487a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        colors: ["Putih", "Hitam", "Biru", "Merah"],
-        sizes: ["S", "M", "L", "XL"]
-      },
-      {
-        id: 5,
-        name: "Kaos Polo",
-        category: "polo",
-        price: 65000,
-        image: "https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        colors: ["Hitam", "Abu", "Krem", "Biru"],
-        sizes: ["M", "L", "XL", "XXL"]
-      },
-      {
-        id: 6,
-        name: "Kemeja",
-        category: "polo",
-        price: 120000,
-        image: "https://images.unsplash.com/photo-1578932750355-5eb30ece487a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        colors: ["Putih", "Hitam", "Biru", "Merah"],
-        sizes: ["S", "M", "L", "XL"]
-      },
-      {
-        id: 6,
-        name: "Jersey",
-        category: "polo",
-        price: 120000,
-        image: "https://images.unsplash.com/photo-1578932750355-5eb30ece487a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        colors: ["Putih", "Hitam", "Biru", "Merah"],
-        sizes: ["S", "M", "L", "XL"]
-      },
-      
-    ];
+        {
+          "id": 1,
+          "name": "Kaos",
+          "category": "crew",
+          "price": 45000,
+          "image": "asset/gambar_pesanan/db.jpg",
+          "colors": ["Hitam", "Putih", "Abu", "Navy"],
+          "sizes": ["S", "M", "L", "XL"]
+        },
+        {
+          "id": 2,
+          "name": "Dtf Sablon Depan dan Belakang",
+          "category": "hoodie",
+          "price": 60000,
+          "image": "asset/gambar_pesanan/db2.jpg",
+          "colors": ["Hitam", "Abu", "Maroon", "Biru"],
+          "sizes": ["M", "L", "XL", "XXL"]
+        },
+        {
+          "id": 3,
+          "name": "Polo Bordir",
+          "category": "polo",
+          "price": 60000,
+          "image": "asset/gambar_pesanan/polobordir.jpg",
+          "colors": ["Putih", "Hitam", "Biru", "Hijau"],
+          "sizes": ["S", "M", "L", "XL"]
+        },
+        {
+          "id": 4,
+          "name": "Jersey Atasan",
+          "category": "Jersey",
+          "price": 80000,
+          "image": "asset/gambar_pesanan/Jersey atasan.jpg",
+          "colors": ["Putih", "Hitam", "Abu", "Merah"],
+          "sizes": ["S", "M", "L", "XL"]
+        },
+        {
+          "id": 5,
+          "name": " Jersey Atasan dan bawahan",
+          "category": "Jersey",
+          "price": 125000,
+          "image": "asset/gambar_pesanan/atas bawah.jpg",
+          "colors": ["Putih", "Hitam", "Abu", "Merah"],
+          "sizes": ["S", "M", "L", "XL"]
+        },
+        {
+          "id": 6,
+          "name": "Dtf Sablon Satu titik",
+          "category": "hoodie",
+          "price": 65000,
+          "image": "asset/gambar_pesanan/1st.jpg",
+          "colors": ["Hitam", "Abu", "Krem", "Biru"],
+          "sizes": ["M", "L", "XL", "XXL"]
+        },
+        {
+          "id": 7,
+          "name": "PDH",
+          "category": "Couple",
+          "price": 120000,
+          "image": "asset/gambar_pesanan/pdh.jpg",
+          "colors": ["Putih", "Hitam", "Biru", "Merah"],
+          "sizes": ["S", "M", "L", "XL"]
+        },
+        {
+          "id": 8,
+          "name": "Polo sablon dtf",
+          "category": "polo",
+          "price": 80000,
+          "image": "asset/gambar_pesanan/polodtf.jpg",
+          "colors": ["Hitam", "Abu", "Krem", "Biru"],
+          "sizes": ["M", "L", "XL", "XXL"]
+        },
+        {
+          "id": 9,
+          "name": "Sweater",
+          "category": "Sweater",
+          "price": 148000,
+          "image": "asset/gambar_pesanan/sweater.jpg",
+          "colors": ["Putih", "Hitam", "Biru", "Merah"],
+          "sizes": ["S", "M", "L", "XL"]
+        },
+        {
+          "id": 10,
+          "name": "Kemeja Custom",
+          "category": "Couple",
+          "price": 90000,
+          "image": "asset/gambar_pesanan/pdh.png",
+          "colors": ["Putih", "Hitam", "Biru", "Merah"],
+          "sizes": ["S", "M", "L", "XL"]
+        },
+        {
+          "id": 11,
+          "name": "Hoodie",
+          "category": "hdi",
+          "price": 173000,
+          "image": "asset/gambar_pesanan/hoodie.jpg",
+          "colors": ["Putih", "Hitam", "Biru", "Merah"],
+          "sizes": ["S", "M", "L", "XL"]
+        },
+        {
+          "id": 12,
+          "name": "Zip Hoodie",
+          "category": "hdi",
+          "price": 183000,
+          "image": "asset/gambar_pesanan/zip.jpg",
+          "colors": ["Putih", "Hitam", "Biru", "Merah"],
+          "sizes": ["S", "M", "L", "XL"]
+        }
+      ];
     
     // Generate product cards
     function generateProductCards(filter = 'all') {
@@ -207,7 +163,7 @@ tailwind.config = {
             <div class="flex items-center mb-3">
             </div>
             <div class="flex items-center justify-between">
-              <span class="text-lg font-bold text-black dark:text-white">Rp ${product.price.toLocaleString()}</span>
+              <span class="text-lg font-bold text-black dark:text-white">Start from Rp ${product.price.toLocaleString()}</span>
               <button class="add-to-cart bg-secondary hover:bg-yellow-400 text-black font-medium py-2 px-4 rounded-lg transition duration-300" data-id="${product.id}">
                 <i class="fas fa-shopping-cart mr-2"></i> Pesan
               </button>
@@ -358,37 +314,38 @@ tailwind.config = {
     });
 
      // Redeem code functionality
-  const redeemForm = document.getElementById('redeem-form');
-  const redeemCodeInput = document.getElementById('redeem-code');
-  const originalPriceElement = document.getElementById('original-price');
-  const discountedPriceElement = document.getElementById('discounted-price');
-  const discountInfoElement = document.getElementById('discount-info');
-  
-  let discountApplied = false;
-  
-  redeemForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const code = redeemCodeInput.value.trim();
-    
-    if (code === 'GINDXSINTESA2025') {
-      discountApplied = true;
-      redeemCodeInput.classList.remove('border-red-500');
-      redeemCodeInput.classList.add('border-green-500');
-      
-      // Update price display if already calculated
-      if (originalPriceElement.textContent !== 'Rp 0') {
-        applyDiscount();
-      }
-      
-      // Show success message
-      showCustomAlert('Kode diskon berhasil diterapkan! diskon telah terekam di server. silahkan memesan ', true);
-    } else {
-      discountApplied = false;
-      redeemCodeInput.classList.add('border-red-500');
-      showCustomAlert('Kode diskon tidak valid. Silakan coba lagi.', false);
-    }
-  });
+     const redeemForm = document.getElementById('redeem-form');
+     const redeemCodeInput = document.getElementById('redeem-code');
+     const originalPriceElement = document.getElementById('original-price');
+     const discountedPriceElement = document.getElementById('discounted-price');
+     const discountInfoElement = document.getElementById('discount-info');
+     
+     let discountApplied = false;
+     
+     redeemForm.addEventListener('submit', function(e) {
+       e.preventDefault();
+       
+       const code = redeemCodeInput.value.trim();
+       
+       if (code === 'GINDXSINTESA2025') {
+         discountApplied = true;
+         redeemCodeInput.classList.remove('border-red-500');
+         redeemCodeInput.classList.add('border-green-500');
+         
+         // Update price display if already calculated
+         if (originalPriceElement.textContent !== 'Rp 0') {
+           applyDiscount();
+         }
+         
+         // Show success alert
+         alert('Kode diskon berhasil diterapkan! Anda mendapatkan diskon.');
+       } else {
+         discountApplied = false;
+         redeemCodeInput.classList.add('border-red-500');
+         alert('Kode diskon tidak valid. Silakan coba lagi.');
+       }
+     });
+     
   
   function applyDiscount() {
     const originalPriceText = originalPriceElement.textContent.replace('Rp ', '').replace(/\./g, '');
